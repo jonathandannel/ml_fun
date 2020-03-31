@@ -26,30 +26,22 @@ column_names = [
 df.columns = column_names
 pd.options.display.float_format = "{:,.2f}".format
 
-# Compare most immediately important features (RM, MEDV)
+### 1: Arrange data into features matrix and target vector
 
-x = df['RM'].values.reshape(-1, 1)
-# [[val1], [val2], [val3]...]
+# Features matrix
+x = df['LSTAT'].values.reshape(-1, 1)
 print(x)
 
-# Dependent variable, target
+# Target vector. Do not need to reshape.
 y = df['MEDV'].values
+print(y)
 
+### 2: Fit the model to the data
 model = LinearRegression()
 model.fit(x, y)
 
-print(model.coef_)
-print(model.intercept_)
 
-# Visualize
-plt.figure(figsize=(10, 5))
-sns.regplot(x, y)
-plt.xlabel('avg rooms per dwelling')
-plt.ylabel('median val of homes in $1000s')
-# plt.show()
-
-# Predict
-# 5 rooms
+### 3: Apply the model to new data
 prediction = model.predict(np.array([5]).reshape(1, -1))
 print(prediction)
 
