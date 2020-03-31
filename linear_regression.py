@@ -1,4 +1,4 @@
-import numpy as numpy
+import numpy as np
 import pandas as pd
 import sklearn
 import seaborn as sns
@@ -46,6 +46,12 @@ sns.regplot(x, y)
 plt.xlabel('avg rooms per dwelling')
 plt.ylabel('median val of homes in $1000s')
 plt.show()
+
+# Predict
+
+# 5 rooms
+model.predict(np.array[5]).reshape(1, -1)
+
 
 
 
