@@ -29,4 +29,16 @@ class BostonDF:
                             delim_whitespace=True,
                             header=None)
         self.df.columns = self.column_names
+
+    def get_corr_heatmap(self, arr=[]):
+        ## Takes a list of columns to compare
+        ## ['MEDV', 'LSTAT']
+        plt.figure(figsize=(16, 10))
+        if not arr:
+            sns.heatmap(self.df.corr(), annot=True)
+        else:
+            sns.heatmap(self.df[arr].corr())
+        plt.show()
+
+
     
