@@ -22,9 +22,8 @@ column_names = [
     'MEDV' # median value of owner-occupied homes in 1000s
 ]
 
-# rename numerical column indices
 df.columns = column_names
-pd.options.display.float_format = "{:, .2f}".format
+pd.options.display.float_format = "{:,.2f}".format
 
 #################################
 
@@ -35,14 +34,18 @@ print(DESCRIPTION)
 
 #################################
 
+# Visualize data in pairplots
 # col_study = ["B", "CRIM" ]
 # plt.figure(figsize=(1, 1))
 # sns.pairplot(df[col_study], height=2.5)
 # plt.show()
 
 #################################
-# correlation analysis
-# df.corr()
+print(df.corr())
+
+# Perform correlation analysis with a heatmap
+# Limit correlation to a few relevant fields
+
 col_study = ["ZN", "CRIM", "CHAS", "INDUS", "MEDV" ]
 plt.figure(figsize=(16,10))
 sns.heatmap(df[col_study].corr(), annot=True)
