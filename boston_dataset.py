@@ -1,9 +1,7 @@
 import numpy as np
 import pandas as pd
-import sklearn
 import seaborn as sns
 import matplotlib.pyplot as plt
-from sklearn.linear_model import LinearRegression
 
 class BostonDataset:
     column_names = [
@@ -37,6 +35,7 @@ class BostonDataset:
         else:
             sns.heatmap(self.df[arr].corr(), annot=True)
         plt.show()
+        
     def get_regplot(self, x, y):
         plt.figure(figsize=(10, 5))
         sns.regplot(x, y)

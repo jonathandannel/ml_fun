@@ -1,6 +1,5 @@
 import numpy as np
 import pandas as pd
-import sklearn
 import seaborn as sns
 import matplotlib.pyplot as plt
 from sklearn.linear_model import RANSACRegressor
@@ -46,8 +45,11 @@ def plot():
     # X = df['RM'].values.reshape(-1, 1)
     # y = df['MEDV'].values 
     
+    # inliers for X and y
     plt.scatter(X[inlier_mask], y[inlier_mask],
                 c="blue", marker="o", label="inliers")
+    
+    # outliers for x and y
     plt.scatter(X[outlier_mask], y[outlier_mask],
                 c="brown", marker="s", label="outliers")
     
