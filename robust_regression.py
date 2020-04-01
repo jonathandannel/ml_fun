@@ -18,13 +18,13 @@ y = df['MEDV'].values
 # Fit model
 RANSAC.fit(X, y)
 
-# Outlier
+# [boolean]
 inlier_mask = RANSAC.inlier_mask_
 outlier_mask = np.logical_not(inlier_mask)
 
 def test():
-    print(inlier_mask)
-    print(outlier_mask)
+    # print(inlier_mask)
+    # print(outlier_mask)
     # boston.get_corr_heatmap(['MEDV', 'RM'])
     boston.get_regplot(X, y)
 
