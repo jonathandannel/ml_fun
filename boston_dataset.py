@@ -5,7 +5,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression
 
-class BostonDF:
+class BostonDataset:
     column_names = [
         'CRIM', # per capita crime rate by town
         'ZN', # proportion of residental land zoned for lots > 25,000 sq. ft.
@@ -31,8 +31,6 @@ class BostonDF:
         self.df.columns = self.column_names
 
     def get_corr_heatmap(self, arr=[]):
-        ## Takes a list of columns to compare
-        ## ['MEDV', 'LSTAT']
         plt.figure(figsize=(16, 10))
         if not arr:
             sns.heatmap(self.df.corr(), annot=True)

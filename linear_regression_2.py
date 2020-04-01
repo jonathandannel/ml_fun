@@ -4,9 +4,9 @@ import sklearn
 import seaborn as sns
 import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression
-from boston_df import BostonDF
+from boston_dataset import BostonDataset
 
-df = BostonDF().df
+df = BostonDataset().df
 
 ### 1: Arrange data into features matrix and target vector
 

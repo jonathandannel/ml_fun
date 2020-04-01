@@ -4,10 +4,16 @@ import sklearn
 import seaborn as sns
 import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression
-from boston_df import BostonDF
+from boston_dataset import BostonDataset
 
-boston = BostonDF()
+boston = BostonDataset()
 
 df = boston.df
 
-boston.get_corr_heatmap(['MEDV', 'LSTAT', 'INDUS', 'B'])
+rm_values = df['RM'].values.reshape(-1, 1)
+
+# boston.get_corr_heatmap(['MEDV', 'LSTAT', 'INDUS', 'B'])
+
+
+
+
