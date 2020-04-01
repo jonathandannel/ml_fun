@@ -35,8 +35,13 @@ class BostonDataset:
         if not arr:
             sns.heatmap(self.df.corr(), annot=True)
         else:
-            sns.heatmap(self.df[arr].corr())
+            sns.heatmap(self.df[arr].corr(), annot=True)
         plt.show()
-
+    def get_regplot(self, x, y):
+        plt.figure(figsize=(10, 5))
+        sns.regplot(x, y)
+        plt.xlabel('x')
+        plt.ylabel('y')
+        plt.show()
 
     
